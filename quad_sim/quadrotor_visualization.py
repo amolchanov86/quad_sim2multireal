@@ -2,8 +2,8 @@ import numpy as np
 from numpy.linalg import norm
 import copy
 
-import gym_art.quadrotor.rendering3d as r3d
-from gym_art.quadrotor.quad_utils import *
+import quad_sim.rendering3d as r3d
+from quad_sim.quad_utils import *
 
 # for visualization.
 # a rough attempt at a reasonable third-person camera

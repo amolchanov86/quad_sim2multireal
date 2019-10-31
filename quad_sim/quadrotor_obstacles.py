@@ -1,7 +1,7 @@
 import numpy as np
 from numpy.linalg import norm
-from gym_art.quadrotor.quad_utils import *
-import gym_art.quadrotor.rendering3d as r3d
+from quad_sim.quad_utils import *
+import quad_sim.rendering3d as r3d
 
 # determine where to put the obstacles such that no two obstacles intersect
 # and compute the list of obstacles to collision check at each 2d tile.

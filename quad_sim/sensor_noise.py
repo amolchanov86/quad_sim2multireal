@@ -4,7 +4,7 @@ from numpy.random import normal
 from numpy.random import uniform
 import matplotlib.pyplot as plt
 from math import exp
-from gym_art.quadrotor.quad_utils import quat2R, quatXquat
+from quad_sim.quad_utils import quat2R, quatXquat
 
 def quat_from_small_angle(theta):
     assert theta.shape == (3,)
