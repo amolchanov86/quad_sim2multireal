@@ -18,11 +18,6 @@ Checkout [garage](https://github.com/rlworkgroup/garage/).
 
 Follow the standard garage [setup instructions](http://rlgarage.readthedocs.io/en/latest/user/installation.html).
 
-Add garage location to your PYTHONPATH. I.e. if garage folder is in ~/prj/garage then
-```
-export PYTHONPATH=$PYTHONPATH:~/prj
-```
-
 ### Step 2
 Check out this repository:
 ```sh
@@ -37,7 +32,7 @@ bash ~/prj/quad_sim2multireal/install_depend.sh
 ```
 
 ### Step 4
-Add all repositories into the `$PYTHONPATH` in your .bashrc:
+Add all repositories into the `$PYTHONPATH`:
 ```sh
 export PYTHONPATH=$PYTHONPATH:~/prj/garage
 export PYTHONPATH=$PYTHONPATH:~/prj/quad_sim2multireal
