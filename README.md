@@ -77,6 +77,16 @@ bash ./launchers/ppo_crazyflie_baseline.sh
 python ./train_quad.py config/ppo__crazyflie_baseline.yml _results_temp/ppo_crazyflie_baseline/seed_001
 ```
 
+### Monitoring
+#### Use `tensorborad` to monitor the training progress
+```sh
+tensorboard --logdir ./_results_temp
+```
+#### To use a specific port
+```sh
+tensorboard --logdir ./_results_temp --port port_num
+```
+
 ### Plotting
 `plot_tools` library allows nice plotting of statistics.
 It assumes that the training results are organized as following: `results_folder/experiment_folder/seed_{X}/progress.csv` , where:
@@ -96,3 +106,32 @@ The plot_tools module contains:
    ```
 
 Look into `--help` option for all the scripts mentioned above for more options.
+
+### Generating source code for Crazyflie firmware
+`quad_gen` library allow fast generation of embedded source code for the Crazyflie firmware.
+Once you have successfully trained a quadrotor stabilizing policy, you will get a pickle file `params.pkl`
+that is contained in a folder with other data that will be useful for analysis. 
+In this process, it also assumes the results are organized as following: `results_folder/experiment_folder/seed_{X}/params.pkl`.
+First, go to `~/prj/quad_sim2multireal/quad_gen`
+#### To generate source code for all training results
+```sh
+python ./get_models.py 2 results_folder/ ./models/
+```
+`results_folder/` may contain multiple experiments.
+
+#### To generate source code only for the best seeds
+```sh
+python ./get_models.py 1 results_folder/ ./models/
+
+```
+`results_folder/` may also contain multiple experiments.
+
+#### To generate source code for selected seeds
+```sh
+python ./get_models.py 0 results_folder/ ./models/ -txt [dirs_file]
+```
+In this case, the `-txt` option is required and allows you to specify relative path (to the `results_folder/`) of the seeds you 
+would like to generate the source code for. In general when selecting a seed, you will look at the plotting statistics or the tensorboard.
+If you use tensorboard, we recommend to look at the position reward and the Gaussian policy variance.
+
+Instead of `./models/` you could use any directory you like. It is given just as an example.
