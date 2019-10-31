@@ -1,4 +1,7 @@
-# Quadrotor Metalearning Project
+# Sim-to-(Multi)-Real: Transfer of Low-Level Robust Control Policies to Multiple Quadrotors
+- [Paper](https://arxiv.org/abs/1903.04628)
+- [Website](https://sites.google.com/view/sim-to-multi-quad)
+
 ## Dependencies:
 - [Garage](https://github.com/rlworkgroup/garage/)
 
