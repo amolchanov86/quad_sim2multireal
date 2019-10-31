@@ -1,0 +1,14 @@
+*__pycache__*
+*.pyc
+*.swp
+.idea
+*.mp4
+_data
+_results_temp
+_results
+*.pkl
+*.pickle
+.ipynb_checkpoints/
+Untitled.ipynb
+saved_models
+.fuse_hidden*

@@ -1,0 +1,23 @@
+seed: 1
+variant:
+  env: Reacher-v2
+  alg_class: PPO
+  alg_param:
+    batch_size: 4000
+    max_path_length: 50
+    n_itr: 200
+    discount: 0.99
+    step_size: 0.01
+    clip_range: 0.1
+    optimizer_args: 
+      batch_size: 64
+      max_epochs: 10
+    plot: False
+    store_paths: True
+    play_every_itr: 10
+  baseline_class: GaussianMLPBaseline
+  baseline_param: {} 
+  policy_class: GaussianMLPPolicy
+  policy_param:
+    hidden_sizes: [64, 64]
+

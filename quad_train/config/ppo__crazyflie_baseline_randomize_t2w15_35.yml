@@ -1,0 +1,45 @@
+seed: 1
+variant:
+  env: QuadrotorEnv
+  env_param:
+    dynamics_params: crazyflie_t2w_15_35
+    dynamics_randomize_every: 1
+    raw_control: True
+    tf_control: False
+    dim_mode: 3D
+    init_random_state: True
+    sim_freq: 200 #Hz
+    sim_steps: 2
+    ep_time: 7
+    sense_noise: default
+    rew_coeff:
+      pos: 1. 
+      pos_log_weight: 0.
+      pos_linear_weight: 1.
+      effort: 0.05
+      spin: 0.1
+      vel: 0.0
+      crash: 0. 
+      orient: 0. 
+      yaw: 0. 
+  alg_class: PPO
+  alg_param:
+    batch_size: 28000
+    max_path_length: 700
+    n_itr: 6000 #Max num of iterations
+    max_samples: 10000000000 #Max num of samples
+    discount: 0.99
+    step_size: 0.01
+    clip_range: 0.05
+    optimizer_args: 
+      batch_size: 128
+      max_epochs: 20
+    plot: False
+    store_paths: False
+    play_every_itr: null
+    record_every_itr: 100
+  baseline_class: GaussianMLPBaseline
+  baseline_param: {} 
+  policy_class: GaussianMLPPolicy
+  policy_param:
+    hidden_sizes: [64, 64]
