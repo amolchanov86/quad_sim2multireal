@@ -32,7 +32,7 @@ import quad_train.misc.variants_utils as vu
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument("config_file", help='yaml file with default settings of parameters')
 parser.add_argument("log_dir", default='_results_temp/trpo_ppo_last', help='Directory to log into')
-parser.add_argument("--seed", '-s', default=None, help='list of seeds to use separated by comma (or a single seed w/o comma). If None seeds from config_file will be used')
+parser.add_argument("--seed", '-s', default="1", help='list of seeds to use separated by comma (or a single seed w/o comma). If None seeds from config_file will be used')
 parser.add_argument("--n_parallel", '-n', type=int, default=1, help='Number of parallel workers to run a single task')
 parser.add_argument("--snapshot_mode", '-snm', default='last', help='Snapshot mode. Opt: last')
 parser.add_argument("--plot", '-plt', action="store_true", help='Plotting')

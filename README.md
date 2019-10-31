@@ -1,7 +1,6 @@
 # Quadrotor Metalearning Project
 ## Dependencies:
 - [Garage](https://github.com/rlworkgroup/garage/)
-- [GymArt](https://github.com/amolchanov86/gym_art.git)
 
 ## Installation
 ### Step 0
@@ -25,28 +24,20 @@ export PYTHONPATH=$PYTHONPATH:~/prj
 Check out this repository:
 ```sh
 cd ~/prj
-git clone https://github.com/amolchanov86/quad_dynalearn.git
+git clone https://github.com/amolchanov86/quad_sim2multireal.git
 ```
 
 ### Step 3 
 Install additional dependencies
 ```sh
-bash ~/prj/quad_dynalearn/install.sh
+bash ~/prj/quad_sim2multireal/install.sh
 ```
 
 ### Step 4
-Clone GymArt:
-```sh
-cd ~/prj
-git clone https://github.com/amolchanov86/gym_art.git
-```
-
-### Step 5
 Add all repositories into the `$PYTHONPATH` in your .bashrc:
 ```sh
 export PYTHONPATH=$PYTHONPATH:~/prj/garage
-export PYTHONPATH=$PYTHONPATH:~/prj/gym_art
-export PYTHONPATH=$PYTHONPATH:~/prj/quad_dynalearn
+export PYTHONPATH=$PYTHONPATH:~/prj/quad_sim2multireal
 ```
 
 
@@ -55,41 +46,31 @@ export PYTHONPATH=$PYTHONPATH:~/prj/quad_dynalearn
 ### General
 - Activate the anaconda environment for garage
 ```
-conda activate garage
+conda activate quad_s2r
 ```
 - Add all repos in your `$PYTHONPATH` if you haven't done so
 - Go to the code root folder:
 ```
-cd ~/prj/quad_dynalearn/quad_dynalearn
+cd ~/prj/quad_sim2multireal/quad_train
 ```
 
 ## Experiments
 
 First, go to the root folder:
 ```
-cd ~/prj/garage_metadist
+cd ~/prj/quad_sim2multireal/quad_train
 ```
 
 ### Training 
 
-#### Train Quadrotor to stabilize at the origin with random horizontal initialization and zero velocity
+#### Train Quadrotor to stabilize at the origin with random initialization and 5 seeds (you need many seeds since some will fail)
 ```sh
-./train_garage_quad.py config/ppo_conf.yml _results_temp/ppo_quad_test
+bash ./launchers/ppo_crazyflie_baseline.sh
 ```
 
-#### Train Quadrotor to stabilize at the origin with random orientation and random initial velocities
+#### Train Quadrotor to stabilize at the origin with random initialization and a default seed (may fail)
 ```sh
-./train_garage_quad.py config/ppo_conf_randinit.yml _results_temp/ppo_quad_randinit_test
-```
-
-#### Train quadrotor MLP dynamics (with Tensorboard reports)
-```sh
-./train_quad_dynamics_tensorboard.py -o _results_temp/quad_dynamics_stochastic_test
-```
-
-#### Train quadrotor stochastic MLP dynamics (with Tensorboard reports)
-```sh
-./train_quad_dynamics_uncertain.py -o _results_temp/quad_dynamics_stochastic_test
+python ./train_quad.py config/ppo__crazyflie_baseline.yml _results_temp/ppo_crazyflie_baseline/seed_001
 ```
 
 ### Plotting
