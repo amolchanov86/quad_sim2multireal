@@ -30,7 +30,7 @@ git clone https://github.com/amolchanov86/quad_sim2multireal.git
 ### Step 3 
 Install additional dependencies
 ```sh
-bash ~/prj/quad_sim2multireal/install.sh
+bash ~/prj/quad_sim2multireal/install_depend.sh
 ```
 
 ### Step 4
