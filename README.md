@@ -32,7 +32,7 @@ bash ~/prj/quad_sim2multireal/install_depend.sh
 ```
 
 ### Step 4
-Add all repositories into the `$PYTHONPATH`:
+Add all repositories into the `$PYTHONPATH` (add it to .bashrc):
 ```sh
 export PYTHONPATH=$PYTHONPATH:~/prj/garage
 export PYTHONPATH=$PYTHONPATH:~/prj/quad_sim2multireal
