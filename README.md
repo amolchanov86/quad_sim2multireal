@@ -14,9 +14,15 @@ mkdir ~/prj
 Instead of `~/prj` you could use any directory you like. It is given just as an example.
 
 ### Step 1
-Checkout [garage](https://github.com/rlworkgroup/garage/).
+Pull [garage](https://github.com/rlworkgroup/garage/).
 
-Follow the standard garage [setup instructions](http://rlgarage.readthedocs.io/en/latest/user/installation.html).
+Checkout the following commit:
+```sh
+cd ~/prj/garage
+git checkout 77714c38d5b575a5cfd6d1e42f0a045eebbe3484
+```
+
+Follow the garage [setup instructions](http://rlgarage.readthedocs.io/en/latest/user/installation.html).
 
 ### Step 2
 Check out this repository:
