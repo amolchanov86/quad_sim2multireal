@@ -2,8 +2,8 @@
 from garage.tf.optimizers import FirstOrderOptimizer
 
 # Custom stuff
-from quad_dynalearn.algos.npo import PGLoss
-from quad_dynalearn.algos.npo import NPO
+from quad_train.algos.npo import PGLoss
+from quad_train.algos.npo import NPO
 
 class PPO(NPO):
     """

@@ -13,8 +13,8 @@ from garage.tf.plotter import Plotter
 from garage.tf.samplers import BatchSampler
 from garage.tf.samplers import OnPolicyVectorizedSampler
 
-from quad_dynalearn.misc.dict2hdf5 import dict2h5 as h5u
-from quad_dynalearn.misc.video_recorder import VideoRecorder
+from quad_train.misc.dict2hdf5 import dict2h5 as h5u
+from quad_train.misc.video_recorder import VideoRecorder
 
 
 class BatchPolopt(RLAlgorithm):

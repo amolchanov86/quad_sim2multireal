@@ -5,8 +5,8 @@ from garage.tf.optimizers import ConjugateGradientOptimizer
 from garage.tf.optimizers import PenaltyLbfgsOptimizer
 
 # Custom stuff
-from quad_dynalearn.algos.npo import PGLoss
-from quad_dynalearn.algos.npo import NPO
+from quad_train.algos.npo_v1 import PGLoss
+from quad_train.algos.npo_v1 import NPO
 
 @unique
 class KLConstraint(Enum):
