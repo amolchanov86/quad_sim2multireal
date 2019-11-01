@@ -1,0 +1,57 @@
+log_dir: _results_temp/ablation/ppo_crazyflie_noisy_nodamp__rew_pos_spin/env_param.rew_coeff.spin/0.1/seed_003/
+n_parallel: 1
+plot: false
+seed: 3
+snapshot_mode: last
+variant:
+  alg_class: PPO
+  alg_param:
+    batch_size: 28000
+    clip_range: 0.05
+    discount: 0.99
+    max_path_length: 700
+    max_samples: 10000000000
+    n_itr: 3000
+    optimizer_args:
+      batch_size: 128
+      max_epochs: 20
+    play_every_itr: null
+    plot: false
+    record_every_itr: 100
+    step_size: 0.01
+    store_paths: false
+  baseline_class: GaussianMLPBaseline
+  baseline_param: {}
+  env: QuadrotorEnv
+  env_param:
+    dynamics_change:
+      damp:
+        omega_quadratic: 0.0
+        vel: 0.0
+      noise:
+        thrust_noise_ratio: 0.05
+    dynamics_params: crazyflie
+    ep_time: 7
+    init_random_state: true
+    rew_coeff:
+      action_change: 0.0
+      crash: 0.0
+      effort: 0.05
+      orient: 0.0
+      pos: 1.0
+      pos_linear_weight: 1.0
+      pos_log_weight: 0.0
+      spin: 0.1
+      spin_xy: 0.0
+      spin_z: 0.0
+      vel: 0.0
+      yaw: 0.0
+    sense_noise: default
+    sim_freq: 200
+    sim_steps: 2
+  policy_class: GaussianMLPPolicy
+  policy_param:
+    hidden_sizes:
+    - 64
+    - 64
+

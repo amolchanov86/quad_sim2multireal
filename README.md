@@ -134,4 +134,5 @@ In this case, the `-txt` option is required and allows you to specify relative p
 would like to generate the source code for. In general when selecting a seed, you will look at the plotting statistics or the tensorboard.
 If you use tensorboard, we recommend to look at the position reward and the Gaussian policy variance.
 
-Instead of `./models/` you could use any directory you like. It is given just as an example.
+Instead of `./models/` you could use any directory you like. It is given just as an example. 
+The code for the NN baseline used on the paper is included in `models/` as an example.
