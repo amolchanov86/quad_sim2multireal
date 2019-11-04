@@ -38,6 +38,12 @@ bash ~/prj/quad_sim2multireal/install_depend.sh
 ```
 
 ### Step 4
+Install the conda environment with the necessary packages by running:
+```sh
+conda env create -f conda_env.yml
+```
+
+### Step 5
 Add all repositories into the `$PYTHONPATH` (add it to .bashrc):
 ```sh
 export PYTHONPATH=$PYTHONPATH:~/prj/garage
@@ -48,8 +54,8 @@ export PYTHONPATH=$PYTHONPATH:~/prj/quad_sim2multireal
 ## Preparing to run experiements 
 
 ### General
-- Activate the anaconda environment for garage
-```
+- Activate the anaconda environment for the experiment
+```sh
 conda activate quad_s2r
 ```
 - Add all repos in your `$PYTHONPATH` if you haven't done so
