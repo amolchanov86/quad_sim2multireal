@@ -20,13 +20,6 @@ cd ~/sim2multireal
 
 Instead of `~/sim2multireal` you could use any directory you like. It is given just as an example.
 
-Create a new conda environment (make sure to use python3):
-
-```sh
-conda env create --name quad_s2r
-conda activate quad_s2r
-```
-
 ### Step 1
 
 Pull [garage](https://github.com/rlworkgroup/garage/).
@@ -63,12 +56,6 @@ On macOS:
 ./scripts/setup_macos.sh --mjkey mjkey.txt --modify-bashrc
 ```
 
-Install garage using pip (make sure you are in the right conda environment).
-
-```sh
-pip install garage
-```
-
 ### Step 2
 
 Clone this repository:
@@ -76,6 +63,7 @@ Clone this repository:
 ```sh
 cd ~/sim2multireal
 git clone https://github.com/amolchanov86/quad_sim2multireal.git
+cd quad_sim2multireal
 ```
 
 ### Step 3
@@ -85,31 +73,21 @@ Install additional dependencies
 On linux:
 
 ```sh
-bash ~/sim2multireal/quad_sim2multireal/install_depend_linux.sh
+bash install_depend_linux.sh
 ```
 
 On macOS:
 
 ```sh
-bash ~/sim2multireal/quad_sim2multireal/install_depend_macos.sh
+bash install_depend_macos.sh
 ```
 
 ### Step 4
 
-Install the necessary packages in the conda environment by running:
+Create a new conda environment:
 
 ```sh
-cd ~/sim2multireal/quad_sim2multireal
-conda env update -f conda_env.yml
-```
-
-### Step 5
-
-Add all repositories into the `$PYTHONPATH` (add it to .bashrc):
-
-```sh
-export PYTHONPATH=$PYTHONPATH:~/sim2multireal/garage
-export PYTHONPATH=$PYTHONPATH:~/sim2multireal/quad_sim2multireal
+conda env create -f conda_env.yml
 ```
 
 ## Preparing to run experiements
@@ -189,6 +167,12 @@ The plot_tools module contains:
    ```
 
 Look into `--help` option for all the scripts mentioned above for more options.
+
+### Testing a newly trained model in simulation
+
+`test_controller.py` under `quad_gen` allows you test your fresh model in the simulation with some customizability to the environment. 
+
+Please use `test_controller.py -h` to see the options.
 
 ### Generating source code for Crazyflie firmware
 
