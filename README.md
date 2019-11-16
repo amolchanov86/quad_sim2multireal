@@ -218,3 +218,7 @@ If you use tensorboard, we recommend to look at the position reward and the Gaus
 
 Instead of `./models/` you could use any directory you like. It is given just as an example.
 The code for the NN baseline used on the paper is included in `models/` as an example.
+
+#### Running on hardware
+
+To run a train network on the Crazyflie hardware, please use a modified version of the Crazyswarm software: [quad_nn](https://github.com/TaoChenOSU/quad_nn)
